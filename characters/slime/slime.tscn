@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgdqdctpb5k4a"]
+
+[ext_resource type="Texture2D" uid="uid://dl23xkbhhmxmm" path="res://characters/slime/slime.png" id="1_t051i"]
+
+[node name="Slime" type="Node2D"]
+
+[node name="Slime" type="Sprite2D" parent="."]
+texture = ExtResource("1_t051i")
