@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://058138c6k2j4"]
+[gd_scene load_steps=4 format=3 uid="uid://058138c6k2j4"]
 
 [ext_resource type="Texture2D" uid="uid://dovi0plvs71yx" path="res://weapons/gun.png" id="1_ltxp5"]
 [ext_resource type="Script" path="res://weapons/gun.gd" id="1_mgdpx"]
-[ext_resource type="Texture2D" uid="uid://dng6hhvdqf5pu" path="res://weapons/bullet.png" id="3_0xf3y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h0to"]
 radius = 1151.47
@@ -11,6 +10,9 @@ radius = 1151.47
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_mgdpx")
+
+[node name="Dummy" type="Node" parent="."]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7h0to")
@@ -23,10 +25,6 @@ texture = ExtResource("1_ltxp5")
 [node name="GunBarrel" type="Marker2D" parent="GunPivot/Gun"]
 unique_name_in_owner = true
 position = Vector2(20, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="GunPivot/Gun/GunBarrel"]
-visible = false
-texture = ExtResource("3_0xf3y")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

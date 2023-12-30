@@ -11,7 +11,7 @@ func shoot():
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = %GunBarrel.global_position
 	new_bullet.global_rotation = %GunBarrel.global_rotation
-	%GunBarrel.add_child(new_bullet)
+	%Dummy.add_child(new_bullet)
 
 func _on_timer_timeout():
 	shoot()

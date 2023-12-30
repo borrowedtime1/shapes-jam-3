@@ -11,6 +11,7 @@ size = Vector2(100, 100)
 script = ExtResource("1_ma7mt")
 
 [node name="PlayerSquare" parent="." instance=ExtResource("2_srwxd")]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
