@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://btrxvhu046gnw"]
+
+[ext_resource type="PackedScene" uid="uid://bjejc82rderqh" path="res://Player/player.tscn" id="1_hmw4f"]
+[ext_resource type="PackedScene" uid="uid://dv7ctjia14ui6" path="res://Enemy/Slime/slime.tscn" id="2_42aiv"]
+
+[node name="Game" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -48.0
+offset_top = -46.0
+offset_right = 1235.0
+offset_bottom = 692.0
+
+[node name="Player" parent="." instance=ExtResource("1_hmw4f")]
+position = Vector2(578, 323)
+
+[node name="Slime" parent="." instance=ExtResource("2_42aiv")]
+position = Vector2(119, 156)

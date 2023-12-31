@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv7ctjia14ui6"]
+
+[ext_resource type="Script" path="res://Enemy/Slime/slime.gd" id="1_cm6py"]
+[ext_resource type="Texture2D" uid="uid://ct4lbup4b6g6i" path="res://Textures/Enemy/slime.png" id="2_06de6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kolki"]
+size = Vector2(80, 80)
+
+[node name="Slime" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_cm6py")
+
+[node name="Slime" type="Sprite2D" parent="."]
+texture = ExtResource("2_06de6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kolki")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cagblyjks5nrh"
-path="res://.godot/imported/right_triangle.png-613daa8c7a17422a57185cbe4861a4c3.ctex"
+uid="uid://bclh2okc5au70"
+path="res://.godot/imported/player_square.png-f9485236a08dc494dd9e42a78230e1b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://weapons/right_triangle.png"
-dest_files=["res://.godot/imported/right_triangle.png-613daa8c7a17422a57185cbe4861a4c3.ctex"]
+source_file="res://Textures/Player/player_square.png"
+dest_files=["res://.godot/imported/player_square.png-f9485236a08dc494dd9e42a78230e1b7.ctex"]
 
 [params]
 
