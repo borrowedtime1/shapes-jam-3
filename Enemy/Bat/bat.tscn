@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dodk422i6fv41"]
+
+[ext_resource type="Script" path="res://Enemy/Bat/bat.gd" id="1_coctv"]
+[ext_resource type="Texture2D" uid="uid://b40jggbm3kmj3" path="res://Textures/Enemy/bat.png" id="1_kj4ne"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6s57q"]
+
+[node name="Bat" type="CharacterBody2D"]
+position = Vector2(-29, -26)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_coctv")
+
+[node name="Bat" type="Sprite2D" parent="."]
+position = Vector2(30, 13)
+texture = ExtResource("1_kj4ne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(29, 16)
+scale = Vector2(3.44, 3.44)
+shape = SubResource("CircleShape2D_6s57q")
