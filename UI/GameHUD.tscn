@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d225wxjbmgcdt"]
+[gd_scene load_steps=7 format=3 uid="uid://d225wxjbmgcdt"]
 
 [ext_resource type="Script" path="res://UI/GameHUD.gd" id="1_n6r5m"]
+[ext_resource type="AudioStream" uid="uid://d2fwyhlikfbo8" path="res://SFX/mixkit-arcade-retro-jump-223.wav" id="2_5sjrl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdoyy"]
 bg_color = Color(0.843137, 0, 0, 0.537255)
@@ -145,3 +146,7 @@ offset_bottom = 180.0
 theme_override_font_sizes/font_size = 36
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_5sjrl")

@@ -32,4 +32,5 @@ func gameover_state():
 	%StartText.visible = false
 	%PauseText.visible = false
 	%GameOverText.visible = true
+	%GameOverSound.play()
 	

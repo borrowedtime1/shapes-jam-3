@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dodk422i6fv41"]
+[gd_scene load_steps=5 format=3 uid="uid://dodk422i6fv41"]
 
 [ext_resource type="Script" path="res://Enemy/Bat/bat.gd" id="1_coctv"]
 [ext_resource type="Texture2D" uid="uid://b40jggbm3kmj3" path="res://Textures/Enemy/bat.png" id="1_kj4ne"]
+[ext_resource type="AudioStream" uid="uid://bl2617m26jval" path="res://SFX/mixkit-game-ball-tap-2073.wav" id="3_7drnr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6s57q"]
 
@@ -11,7 +12,8 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_coctv")
 
-[node name="Bat" type="Sprite2D" parent="."]
+[node name="BatSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(30, 13)
 texture = ExtResource("1_kj4ne")
 
@@ -19,3 +21,9 @@ texture = ExtResource("1_kj4ne")
 position = Vector2(29, 16)
 scale = Vector2(3.44, 3.44)
 shape = SubResource("CircleShape2D_6s57q")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_7drnr")
+
+[connection signal="finished" from="DeathSound" to="." method="_on_death_sound_finished"]

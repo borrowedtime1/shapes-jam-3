@@ -17,7 +17,12 @@ func take_damage():
 	
 	#If health depleted, destroy slime
 	if health == 0:
-		queue_free()
+		%SlimeSprite.visible = false
+		%DeathSound.play()
 		new_gem = preload("res://Objects/gem.tscn").instantiate()
 		get_parent().add_child(new_gem)
 		new_gem.global_position = global_position
+		
+
+func _on_death_sound_finished():
+	queue_free()

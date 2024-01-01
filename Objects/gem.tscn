@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdtellqywiq8j"]
+[gd_scene load_steps=5 format=3 uid="uid://bdtellqywiq8j"]
 
 [ext_resource type="Texture2D" uid="uid://exmtiarn1hra" path="res://Textures/Items/gem.png" id="1_2fpkk"]
 [ext_resource type="Script" path="res://Objects/gem.gd" id="1_15gme"]
+[ext_resource type="AudioStream" uid="uid://b8tm4yqqpt7as" path="res://SFX/mixkit-player-jumping-in-a-video-game-2043.wav" id="3_pwlfa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cuuk"]
 
@@ -9,7 +10,8 @@
 collision_layer = 16
 script = ExtResource("1_15gme")
 
-[node name="Gem" type="Sprite2D" parent="."]
+[node name="GemSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 rotation = 0.785398
 scale = Vector2(1, 1)
 texture = ExtResource("1_2fpkk")
@@ -19,4 +21,10 @@ unique_name_in_owner = true
 rotation = -0.785398
 shape = SubResource("RectangleShape2D_4cuuk")
 
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_pwlfa")
+volume_db = -6.558
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="PickupSound" to="." method="_on_pickup_sound_finished"]

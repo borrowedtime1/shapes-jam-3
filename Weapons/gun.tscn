@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://02csubgp84hx"]
+[gd_scene load_steps=5 format=3 uid="uid://02csubgp84hx"]
 
 [ext_resource type="Script" path="res://Weapons/gun.gd" id="1_wvi7q"]
 [ext_resource type="Texture2D" uid="uid://bp0yptmcdtiv2" path="res://Textures/Weapons/gun.png" id="2_16a3c"]
+[ext_resource type="AudioStream" uid="uid://c76g6wa4i1eft" path="res://SFX/mixkit-short-laser-gun-shot-1670.wav" id="3_g5m16"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ib48r"]
 radius = 95.2223
@@ -27,5 +28,9 @@ position = Vector2(18, 0)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
 autostart = true
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_g5m16")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
