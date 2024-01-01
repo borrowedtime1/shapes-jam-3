@@ -6,7 +6,7 @@ signal enemy_death
 
 #Bat Health
 var health = 3
-
+var new_gem
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -20,7 +20,9 @@ func take_damage():
 	#If health depleted, destroy bat
 	if health == 0:
 		queue_free()
-		
+		new_gem = preload("res://Objects/gem.tscn").instantiate()
+		get_parent().add_child(new_gem)
+		new_gem.global_position = global_position
 		
 	
 	

@@ -4,6 +4,8 @@ signal health_depleted
 
 var health = 100.0
 var infinite_health = false
+var xp = 0
+var level = 1
 
 func _physics_process(delta):
 	
@@ -25,3 +27,8 @@ func _physics_process(delta):
 		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
 		%ProgressBar.value = health
 	
+func gain_xp(points):
+	xp += points
+	if xp >= 100:
+		xp -= 100
+		level += 1
