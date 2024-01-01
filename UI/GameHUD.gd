@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+func update_health(hp):
+	%HPBar.set_value(hp)
+
 func update_xp(xp):
 	%XPBar.set_value(xp)
  

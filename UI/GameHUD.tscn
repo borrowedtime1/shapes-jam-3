@@ -1,16 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://d225wxjbmgcdt"]
+[gd_scene load_steps=5 format=3 uid="uid://d225wxjbmgcdt"]
 
 [ext_resource type="Script" path="res://UI/GameHUD.gd" id="1_n6r5m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdoyy"]
+bg_color = Color(0.843137, 0, 0, 0.537255)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl0m5"]
+bg_color = Color(0, 1, 0, 0.654902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_753um"]
+bg_color = Color(0, 0.803922, 0.8, 1)
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_n6r5m")
 
+[node name="HPBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = 134.0
+offset_top = 13.0
+offset_right = 1021.0
+offset_bottom = 40.0
+theme_override_styles/background = SubResource("StyleBoxFlat_mdoyy")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dl0m5")
+value = 100.0
+
 [node name="XPBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
-offset_left = 143.0
-offset_top = 19.0
-offset_right = 1027.0
-offset_bottom = 46.0
+offset_left = 134.0
+offset_top = 49.0
+offset_right = 1021.0
+offset_bottom = 76.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_753um")
 
 [node name="LevelLabel" type="Label" parent="."]
 offset_left = 13.0
