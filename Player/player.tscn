@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://02csubgp84hx" path="res://Weapons/gun.tscn" id="3_tu5al"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ytl0l"]
-size = Vector2(100, 99)
+size = Vector2(96, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1644"]
 
@@ -46,7 +46,6 @@ visible = false
 texture = ExtResource("1_4tusv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ytl0l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
