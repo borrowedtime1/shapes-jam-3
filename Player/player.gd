@@ -31,6 +31,9 @@ func _physics_process(delta):
 		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
 		# %ProgressBar.value = health
 		hud.update_health(health)
+		if health <= 0:
+			get_tree().paused = true
+			hud.gameover_state()
 	
 func gain_xp(points):
 	xp += points
