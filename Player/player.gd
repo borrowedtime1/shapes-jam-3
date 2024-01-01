@@ -6,6 +6,10 @@ var health = 100.0
 var infinite_health = false
 var xp = 0
 var level = 1
+var hud
+
+func _ready():
+	hud = get_node("/root/Game/GameHUD")
 
 func _physics_process(delta):
 	
@@ -29,6 +33,8 @@ func _physics_process(delta):
 	
 func gain_xp(points):
 	xp += points
+	hud.update_xp(xp)
 	if xp >= 100:
 		xp -= 100
 		level += 1
+		hud.update_level(level)

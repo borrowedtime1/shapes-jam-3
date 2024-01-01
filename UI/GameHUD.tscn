@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://d225wxjbmgcdt"]
+
+[ext_resource type="Script" path="res://UI/GameHUD.gd" id="1_n6r5m"]
+
+[node name="GameHUD" type="CanvasLayer"]
+script = ExtResource("1_n6r5m")
+
+[node name="XPBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = 143.0
+offset_top = 19.0
+offset_right = 1027.0
+offset_bottom = 46.0
+
+[node name="LevelLabel" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 21.0
+offset_right = 54.0
+offset_bottom = 44.0
+text = "Level
+"
+
+[node name="LevelNumber" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 57.0
+offset_top = 21.0
+offset_right = 97.0
+offset_bottom = 44.0
+text = "1"

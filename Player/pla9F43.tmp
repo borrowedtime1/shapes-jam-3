@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjejc82rderqh"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_3jfyq"]
+[ext_resource type="Texture2D" uid="uid://bclh2okc5au70" path="res://Textures/Player/player_square.png" id="1_4tusv"]
+[ext_resource type="PackedScene" uid="uid://02csubgp84hx" path="res://Weapons/gun.tscn" id="3_tu5al"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytl0l"]
+size = Vector2(100, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1644"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qq8sr"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihj7m"]
+bg_color = Color(0.109804, 0.717647, 0.290196, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D"]
+platform_floor_layers = 4294901760
+script = ExtResource("1_3jfyq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+color = Color(0.858824, 0.168627, 0.223529, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 97.0
+offset_right = 100.0
+offset_bottom = 99.0
+color = Color(0.984314, 0.984314, 1, 1)
+
+[node name="PlayerSquare" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_4tusv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ytl0l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Gun" parent="." instance=ExtResource("3_tu5al")]
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+scale = Vector2(4.93168, 4.93168)
+shape = SubResource("RectangleShape2D_e1644")
+debug_color = Color(0.901961, 0.160784, 0.513726, 0.419608)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -109.0
+offset_top = -89.0
+offset_right = 120.0
+offset_bottom = -62.0
+theme_override_styles/background = SubResource("StyleBoxFlat_qq8sr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ihj7m")
+value = 100.0
+show_percentage = false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://btrxvhu046gnw"]
+[gd_scene load_steps=5 format=3 uid="uid://btrxvhu046gnw"]
 
 [ext_resource type="PackedScene" uid="uid://bjejc82rderqh" path="res://Player/player.tscn" id="1_hmw4f"]
 [ext_resource type="Script" path="res://game.gd" id="1_pgdf4"]
+[ext_resource type="PackedScene" uid="uid://d225wxjbmgcdt" path="res://UI/GameHUD.tscn" id="2_cssxp"]
 
 [sub_resource type="Curve2D" id="Curve2D_a6uwc"]
 _data = {
@@ -12,10 +13,13 @@ point_count = 4
 [node name="Game" type="Node2D"]
 script = ExtResource("1_pgdf4")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GameHUD" parent="." instance=ExtResource("2_cssxp")]
+unique_name_in_owner = true
+
+[node name="BackgroundCanvas" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="BackgroundCanvas"]
 offset_left = -48.0
 offset_top = -46.0
 offset_right = 1235.0
