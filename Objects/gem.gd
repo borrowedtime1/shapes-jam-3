@@ -3,7 +3,7 @@ extends Area2D
 const XP_VALUE = 5
 
 func _on_body_entered(body):
-	%GemSprite.visible = false
+	%GemRectangle.visible = false
 	%PickupSound.play()
 	
 	if body.has_method("gain_xp"):
