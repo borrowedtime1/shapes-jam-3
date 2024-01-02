@@ -79,8 +79,3 @@ func levelup():
 	#get_tree().paused = true
 		
 
-
-
-
-func _on_background_music_finished():
-	%BackgroundMusic.play()

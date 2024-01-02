@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://UI/GameHUD.gd" id="1_n6r5m"]
 [ext_resource type="AudioStream" uid="uid://d2fwyhlikfbo8" path="res://SFX/mixkit-arcade-retro-jump-223.wav" id="2_5sjrl"]
 [ext_resource type="AudioStream" uid="uid://cpitptto8d6xt" path="res://SFX/mixkit-completion-of-a-level-2063.wav" id="3_f35ah"]
-[ext_resource type="AudioStream" uid="uid://o8vshnxkryd4" path="res://Music/8-bit_Aggressive1.mp3" id="4_gjfhy"]
+[ext_resource type="AudioStream" uid="uid://6le1y6fdhyqf" path="res://Music/8-bit_Aggressive1-fixed.ogg" id="4_yeawu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdoyy"]
 bg_color = Color(0.843137, 0, 0, 0.537255)
@@ -189,7 +189,6 @@ stream = ExtResource("3_f35ah")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("4_gjfhy")
+stream = ExtResource("4_yeawu")
+volume_db = -10.307
 autoplay = true
-
-[connection signal="finished" from="BackgroundMusic" to="." method="_on_background_music_finished"]

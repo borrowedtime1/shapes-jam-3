@@ -34,6 +34,7 @@ theme_override_font_sizes/font_size = 50
 text = "Exit"
 
 [node name="button_play" type="Button" parent="."]
+layout_mode = 0
 offset_left = 800.0
 offset_top = 568.0
 offset_right = 1100.0
