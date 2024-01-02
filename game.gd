@@ -1,5 +1,10 @@
 extends Node2D
 
+var spawn_timer_delay = 5.0
+
+func _ready():
+	%SpawnTimer.set_wait_time(spawn_timer_delay)
+
 func spawn_mob():
 	var rand = randi_range(1, 10)
 	
@@ -18,7 +23,13 @@ func spawn_mob():
 	add_child(new_mob)
 	
 
-
-func _on_timer_timeout():
+func _on_spawn_timer_timeout():
 	spawn_mob()
+
+
+func _on_difficulty_timer_timeout():
+	if spawn_timer_delay >= 0.5:
+		spawn_timer_delay -= 0.5
+		%SpawnTimer.set_wait_time(spawn_timer_delay)
+
 

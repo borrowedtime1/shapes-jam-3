@@ -10,6 +10,7 @@
 position = Vector2(-29, -26)
 collision_layer = 2
 collision_mask = 3
+platform_floor_layers = 4294967040
 script = ExtResource("1_coctv")
 
 [node name="BatSprite" type="Sprite2D" parent="."]
