@@ -4,6 +4,9 @@ signal enemy_death
 
 @onready var player = get_node("/root/Game/Player")
 
+func _ready():
+	%BatSprite.play()
+
 #Bat Health
 var health = 5
 var new_gem

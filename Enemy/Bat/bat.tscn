@@ -1,8 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://dodk422i6fv41"]
+[gd_scene load_steps=7 format=3 uid="uid://dodk422i6fv41"]
 
 [ext_resource type="Script" path="res://Enemy/Bat/bat.gd" id="1_coctv"]
 [ext_resource type="Texture2D" uid="uid://b40jggbm3kmj3" path="res://Textures/Enemy/bat.png" id="1_kj4ne"]
 [ext_resource type="AudioStream" uid="uid://bl2617m26jval" path="res://SFX/mixkit-game-ball-tap-2073.wav" id="3_7drnr"]
+[ext_resource type="Texture2D" uid="uid://benmsr0gmn0xq" path="res://Textures/Enemy/bat2.png" id="3_yf151"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aix4s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kj4ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yf151")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6s57q"]
 
@@ -13,10 +28,12 @@ collision_mask = 3
 platform_floor_layers = 4294967040
 script = ExtResource("1_coctv")
 
-[node name="BatSprite" type="Sprite2D" parent="."]
+[node name="BatSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(30, 13)
-texture = ExtResource("1_kj4ne")
+sprite_frames = SubResource("SpriteFrames_aix4s")
+animation = &"fly"
+frame_progress = 0.549746
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(29, 16)
