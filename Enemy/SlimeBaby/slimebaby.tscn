@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://8snodw2vhra5"]
+
+[ext_resource type="Script" path="res://Enemy/SlimeBaby/slimebaby.gd" id="1_de4ck"]
+[ext_resource type="Texture2D" uid="uid://ct4lbup4b6g6i" path="res://Textures/Enemy/slime.png" id="2_dowx8"]
+[ext_resource type="AudioStream" uid="uid://bl2617m26jval" path="res://SFX/mixkit-game-ball-tap-2073.wav" id="3_w8tcl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hlgv"]
+size = Vector2(80, 80)
+
+[node name="SlimeBaby" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_de4ck")
+
+[node name="SlimeSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.460934, 0.460934)
+texture = ExtResource("2_dowx8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.451959, 0.451959)
+shape = SubResource("RectangleShape2D_0hlgv")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_w8tcl")

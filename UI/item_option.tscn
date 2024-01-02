@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://draxobtgokcj4"]
+
+[ext_resource type="Texture2D" uid="uid://dg55loytnmavt" path="res://Textures/placeholder.png" id="1_34nwl"]
+[ext_resource type="Script" path="res://UI/item_option.gd" id="1_jm32v"]
+
+[node name="ItemOption" type="ColorRect"]
+custom_minimum_size = Vector2(360, 50)
+offset_right = 360.0
+offset_bottom = 100.0
+color = Color(0.439216, 0.439216, 0.439216, 1)
+script = ExtResource("1_jm32v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 52.0
+offset_bottom = 52.0
+color = Color(0, 0, 0, 1)
+
+[node name="ItemIcon" type="TextureRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 49.0
+offset_bottom = 48.0
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_34nwl")
+
+[node name="label_name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 3.0
+offset_right = 125.0
+offset_bottom = 26.0
+text = "Name"
+horizontal_alignment = 1
+
+[node name="label_description" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 392.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 8
+text = "Description of Item"
+autowrap_mode = 3
+
+[node name="label_level" type="Label" parent="."]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 6.0
+offset_right = 301.0
+offset_bottom = 29.0
+theme_override_font_sizes/font_size = 12
+text = "level: 1"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

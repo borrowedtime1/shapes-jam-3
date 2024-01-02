@@ -1,15 +1,18 @@
 extends Node2D
 
 func spawn_mob():
-	var rand = randi_range(1 ,2)
+	var rand = randi_range(1 ,4)
 	
 	var new_mob
 	
-	if rand == 1:
+	# If rand is less than 3, spawn slime
+	if rand < 4:
 		new_mob = preload("res://Enemy/Slime/slime.tscn").instantiate()
-		
-	if rand == 2:
+	
+	# If rand is 4, spawn bat
+	if rand == 4:
 		new_mob = preload("res://Enemy/Bat/bat.tscn").instantiate()
+	
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)

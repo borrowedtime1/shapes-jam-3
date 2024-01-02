@@ -14,7 +14,6 @@ script = ExtResource("1_15gme")
 unique_name_in_owner = true
 visible = false
 rotation = 0.785398
-scale = Vector2(1, 1)
 texture = ExtResource("1_2fpkk")
 
 [node name="GemRectangle" type="ColorRect" parent="."]

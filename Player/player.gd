@@ -8,10 +8,11 @@ var xp = 0
 var level = 1
 var hud
 
+var gun_level = 1
+
 @onready var levelPanel = get_node("%LevelUp")
 @onready var upgradeOptions = get_node("%UpgradeOptions")
 @onready var sndLevelUp = get_node("%sound_levelup")
-
 func _ready():
 	hud = get_node("/root/Game/GameHUD")
 
@@ -38,13 +39,21 @@ func _physics_process(delta):
 		if health <= 0:
 			get_tree().paused = true
 			hud.gameover_state()
-	
+
+
 func gain_xp(points):
 	xp += points
 	hud.update_xp(xp)
+	
+	#If XP is 100 or more level up
 	if xp >= 100:
 		xp -= 100
 		level += 1
 		hud.update_level(level)
 		hud.levelup()
+		gun_level = level
+	
+	
+
+	
 

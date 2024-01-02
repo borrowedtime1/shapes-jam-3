@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://cas15m48rr2io"]
+
+[ext_resource type="Script" path="res://Menu/menu.gd" id="1_pgcnv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pgcnv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(48.0732, 26.9602)
+color = Color(0.266667, 0, 0.615686, 0.839216)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 300.0
+theme_override_font_sizes/font_size = 100
+text = "GEOMETRIC SHAPE SURVIVORS"
+horizontal_alignment = 1
+
+[node name="button_exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 750.0
+offset_right = 1100.0
+offset_bottom = 850.0
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[node name="button_play" type="Button" parent="."]
+offset_left = 800.0
+offset_top = 568.0
+offset_right = 1100.0
+offset_bottom = 668.0
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[connection signal="pressed" from="button_exit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="button_play" to="." method="_on_button_play_pressed"]

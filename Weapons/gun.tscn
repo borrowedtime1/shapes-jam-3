@@ -25,7 +25,8 @@ texture = ExtResource("2_16a3c")
 unique_name_in_owner = true
 position = Vector2(18, 0)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="ShootTimer" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 0.3
 autostart = true
 
@@ -33,4 +34,4 @@ autostart = true
 unique_name_in_owner = true
 stream = ExtResource("3_g5m16")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_timer_timeout"]
