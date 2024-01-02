@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjejc82rderqh"]
+[gd_scene load_steps=9 format=3 uid="uid://bjejc82rderqh"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_3jfyq"]
 [ext_resource type="Texture2D" uid="uid://bclh2okc5au70" path="res://Textures/Player/player_square.png" id="1_4tusv"]
 [ext_resource type="PackedScene" uid="uid://02csubgp84hx" path="res://Weapons/gun.tscn" id="3_tu5al"]
+[ext_resource type="AudioStream" uid="uid://cpitptto8d6xt" path="res://SFX/mixkit-completion-of-a-level-2063.wav" id="4_gfafp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ytl0l"]
 size = Vector2(96, 96)
@@ -73,3 +74,32 @@ theme_override_styles/background = SubResource("StyleBoxFlat_qq8sr")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ihj7m")
 value = 100.0
 show_percentage = false
+
+[node name="LevelUp" type="Panel" parent="."]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+offset_left = 800.0
+offset_top = 50.0
+offset_right = 1050.0
+offset_bottom = 300.0
+
+[node name="label_levelUP" type="Label" parent="LevelUp"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 50.0
+text = "Level Up !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeOptions" type="VBoxContainer" parent="LevelUp"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 190.0
+offset_bottom = 100.0
+
+[node name="sound_levelup" type="AudioStreamPlayer2D" parent="LevelUp"]
+unique_name_in_owner = true
+stream = ExtResource("4_gfafp")

@@ -13,7 +13,7 @@ collision_mask = 2
 script = ExtResource("1_wvi7q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(12.16, 12.16)
+scale = Vector2(5.12944, 5.12944)
 shape = SubResource("CircleShape2D_ib48r")
 
 [node name="WeaponPivot" type="Marker2D" parent="."]

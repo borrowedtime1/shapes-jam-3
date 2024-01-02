@@ -8,6 +8,10 @@ var xp = 0
 var level = 1
 var hud
 
+@onready var levelPanel = get_node("%LevelUp")
+@onready var upgradeOptions = get_node("%UpgradeOptions")
+@onready var sndLevelUp = get_node("%sound_levelup")
+
 func _ready():
 	hud = get_node("/root/Game/GameHUD")
 
@@ -42,3 +46,5 @@ func gain_xp(points):
 		xp -= 100
 		level += 1
 		hud.update_level(level)
+		hud.levelup()
+
