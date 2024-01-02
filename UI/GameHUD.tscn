@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://UI/GameHUD.gd" id="1_n6r5m"]
 [ext_resource type="AudioStream" uid="uid://d2fwyhlikfbo8" path="res://SFX/mixkit-arcade-retro-jump-223.wav" id="2_5sjrl"]
 [ext_resource type="AudioStream" uid="uid://cpitptto8d6xt" path="res://SFX/mixkit-completion-of-a-level-2063.wav" id="3_f35ah"]
-[ext_resource type="AudioStream" uid="uid://o8vshnxkryd4" path="res://Music/8-bit_Aggressive1.mp3" id="4_ra3ot"]
+[ext_resource type="AudioStream" uid="uid://o8vshnxkryd4" path="res://Music/8-bit_Aggressive1.mp3" id="4_gjfhy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdoyy"]
 bg_color = Color(0.843137, 0, 0, 0.537255)
@@ -77,11 +77,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GrayScreen" type="ColorRect" parent="."]
 unique_name_in_owner = true
-process_mode = 2
 visible = false
 offset_right = 1159.0
 offset_bottom = 654.0
-scale = Vector2(1.66359, 1.66359)
+scale = Vector2(1.65654, 1.65654)
 color = Color(0.211765, 0.211765, 0.211765, 0.8)
 
 [node name="StartText" type="Label" parent="GrayScreen"]
@@ -134,6 +133,7 @@ vertical_alignment = 1
 
 [node name="GameOverText" type="Label" parent="GrayScreen"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 338.0
 offset_top = 254.0
@@ -153,14 +153,6 @@ offset_bottom = 180.0
 theme_override_font_sizes/font_size = 36
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="button_exit" type="Button" parent="GrayScreen"]
-offset_left = 437.006
-offset_top = 450.832
-offset_right = 737.006
-offset_bottom = 550.832
-theme_override_font_sizes/font_size = 50
-text = "Exit"
 
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
@@ -195,10 +187,9 @@ offset_bottom = 100.0
 unique_name_in_owner = true
 stream = ExtResource("3_f35ah")
 
-[node name="background_music" type="AudioStreamPlayer" parent="."]
-process_mode = 1
-stream = ExtResource("4_ra3ot")
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_gjfhy")
 autoplay = true
 
-[connection signal="pressed" from="GrayScreen/button_exit" to="." method="_on_button_exit_pressed"]
-[connection signal="finished" from="background_music" to="." method="_on_background_music_finished"]
+[connection signal="finished" from="BackgroundMusic" to="." method="_on_background_music_finished"]

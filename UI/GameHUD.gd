@@ -3,9 +3,8 @@ extends CanvasLayer
 @onready var levelPanel = get_node("%LevelUp")
 @onready var upgradeOptions = get_node("%UpgradeOptions")
 @onready var sndLevelUp = get_node("%sound_levelup")
-@onready var itemOptions = preload("res://UI/item_option.tscn")
 
-@onready var background_music = $background_music
+var paused = false
 
 func update_health(hp):
 	%HPBar.set_value(hp)
@@ -41,6 +40,8 @@ func gameover_state():
 	%GameOverText.visible = true
 	%GameOverSound.play()
 	
+	
+
 func levelup():
 	sndLevelUp.play()
 	#var tween = levelPanel.create_tween()
@@ -66,21 +67,20 @@ func levelup():
 	#levelPanel.visible = false
 	#levelPanel.position = Vector2(800,50)
 	#get_tree().paused = false
+#
+
+#todo: Implement later
+#func levelup():
+	#sndLevelUp.play()
+	#var tween = levelPanel.create_tween()
+	#tween.tween_property(levelPanel,"position", Vector2(735,363), 0.2).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN)
+	#tween.play()
+	#levelPanel.visible = true
+	#get_tree().paused = true
+		
 
 
-
-
-func _on_button_exit_pressed():
-	get_tree().quit()
-	
-	
-
-
-func _on_button_retry_pressed():
-	var level = "res://game.tscn"
-	get_tree().paused = false
-	var _level = get_tree().change_scene_to_file(level)
 
 
 func _on_background_music_finished():
-	background_music.play()
+	%BackgroundMusic.play()

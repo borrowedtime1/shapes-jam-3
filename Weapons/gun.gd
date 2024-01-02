@@ -36,7 +36,13 @@ func update_gun():
 		1:
 			%ShootTimer.wait_time = 0.5
 		2:
+			%ShootTimer.wait_time = 0.4
+		5:
 			%ShootTimer.wait_time = 0.3
-		3:
+		7:
 			%ShootTimer.wait_time = 0.2
+		8:
+			%ShootTimer.wait_time = 0.1
+		10:
+			%ShootTimer.wait_time = 0.05
 

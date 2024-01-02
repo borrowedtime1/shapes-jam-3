@@ -52,7 +52,7 @@ func gain_xp(points):
 		hud.update_level(level)
 		hud.levelup()
 		gun_level = level
-	
+
 	
 
 	

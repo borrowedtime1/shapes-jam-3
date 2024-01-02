@@ -1,6 +1,6 @@
 extends Area2D
 
-const XP_VALUE = 10
+const XP_VALUE = 5
 
 func _on_body_entered(body):
 	%GemRectangle.visible = false
