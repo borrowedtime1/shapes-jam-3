@@ -10,6 +10,7 @@ size = Vector2(126, 293)
 [node name="Ghost" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
+platform_floor_layers = 4294901760
 script = ExtResource("1_ifcq1")
 
 [node name="Ghost" type="Sprite2D" parent="."]

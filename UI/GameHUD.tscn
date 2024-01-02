@@ -69,6 +69,7 @@ metadata/_edit_use_anchors_ = true
 [node name="DiffLabel" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.021875
+anchor_right = 0.021875
 offset_left = 318.0
 offset_top = 53.0
 offset_right = 443.0
