@@ -1,8 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv7ctjia14ui6"]
+[gd_scene load_steps=12 format=3 uid="uid://dv7ctjia14ui6"]
 
 [ext_resource type="Script" path="res://Enemy/Slime/slime.gd" id="1_cm6py"]
-[ext_resource type="Texture2D" uid="uid://ct4lbup4b6g6i" path="res://Textures/Enemy/slime.png" id="2_06de6"]
+[ext_resource type="Texture2D" uid="uid://d24jak01700wa" path="res://Textures/Enemy/slime-sprite2.png" id="2_oy8mk"]
 [ext_resource type="AudioStream" uid="uid://bl2617m26jval" path="res://SFX/mixkit-game-ball-tap-2073.wav" id="3_sygom"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgmcd"]
+atlas = ExtResource("2_oy8mk")
+region = Rect2(0, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jclaj"]
+atlas = ExtResource("2_oy8mk")
+region = Rect2(80, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf87w"]
+atlas = ExtResource("2_oy8mk")
+region = Rect2(160, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6cab"]
+atlas = ExtResource("2_oy8mk")
+region = Rect2(0, 120, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7hnf"]
+atlas = ExtResource("2_oy8mk")
+region = Rect2(80, 120, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7eh8"]
+atlas = ExtResource("2_oy8mk")
+region = Rect2(160, 120, 80, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7onlg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgmcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jclaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf87w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6cab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7hnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7eh8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kolki"]
 size = Vector2(80, 80)
@@ -13,9 +63,11 @@ collision_mask = 3
 platform_floor_layers = 4294901760
 script = ExtResource("1_cm6py")
 
-[node name="SlimeSprite" type="Sprite2D" parent="."]
+[node name="SlimeSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_06de6")
+position = Vector2(0, -20)
+sprite_frames = SubResource("SpriteFrames_7onlg")
+frame_progress = 0.0513011
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kolki")

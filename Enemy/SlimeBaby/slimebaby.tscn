@@ -1,8 +1,58 @@
-[gd_scene load_steps=5 format=3 uid="uid://8snodw2vhra5"]
+[gd_scene load_steps=12 format=3 uid="uid://8snodw2vhra5"]
 
 [ext_resource type="Script" path="res://Enemy/SlimeBaby/slimebaby.gd" id="1_de4ck"]
-[ext_resource type="Texture2D" uid="uid://ct4lbup4b6g6i" path="res://Textures/Enemy/slime.png" id="2_dowx8"]
+[ext_resource type="Texture2D" uid="uid://d24jak01700wa" path="res://Textures/Enemy/slime-sprite2.png" id="2_nea6k"]
 [ext_resource type="AudioStream" uid="uid://bl2617m26jval" path="res://SFX/mixkit-game-ball-tap-2073.wav" id="3_w8tcl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cipyi"]
+atlas = ExtResource("2_nea6k")
+region = Rect2(0, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3hpx"]
+atlas = ExtResource("2_nea6k")
+region = Rect2(80, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aglx"]
+atlas = ExtResource("2_nea6k")
+region = Rect2(160, 0, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvscn"]
+atlas = ExtResource("2_nea6k")
+region = Rect2(0, 120, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b58lk"]
+atlas = ExtResource("2_nea6k")
+region = Rect2(80, 120, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aahje"]
+atlas = ExtResource("2_nea6k")
+region = Rect2(160, 120, 80, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1biuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cipyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3hpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aglx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvscn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b58lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aahje")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hlgv"]
 size = Vector2(80, 80)
@@ -13,10 +63,12 @@ collision_mask = 3
 platform_floor_layers = 4294967040
 script = ExtResource("1_de4ck")
 
-[node name="SlimeSprite" type="Sprite2D" parent="."]
+[node name="SlimeSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, -10)
 scale = Vector2(0.460934, 0.460934)
-texture = ExtResource("2_dowx8")
+sprite_frames = SubResource("SpriteFrames_1biuw")
+frame_progress = 0.0922138
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.451959, 0.451959)

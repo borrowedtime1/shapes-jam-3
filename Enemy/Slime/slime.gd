@@ -6,6 +6,9 @@ var health = 3
 var new_gem
 var baby_slime
 
+func _ready():
+	%SlimeSprite.play()
+
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)

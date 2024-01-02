@@ -5,6 +5,8 @@ extends CharacterBody2D
 var health = 2
 var new_gem
 
+func _ready():
+	%SlimeSprite.play()
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)

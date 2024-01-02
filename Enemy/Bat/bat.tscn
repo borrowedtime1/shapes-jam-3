@@ -33,7 +33,7 @@ unique_name_in_owner = true
 position = Vector2(30, 13)
 sprite_frames = SubResource("SpriteFrames_aix4s")
 animation = &"fly"
-frame_progress = 0.549746
+frame_progress = 0.955274
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(29, 16)
