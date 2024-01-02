@@ -5,6 +5,8 @@ extends CanvasLayer
 @onready var sndLevelUp = get_node("%sound_levelup")
 @onready var itemOptions = preload("res://UI/item_option.tscn")
 
+@onready var background_music = $background_music
+
 func update_health(hp):
 	%HPBar.set_value(hp)
 
@@ -78,3 +80,7 @@ func _on_button_retry_pressed():
 	var level = "res://game.tscn"
 	get_tree().paused = false
 	var _level = get_tree().change_scene_to_file(level)
+
+
+func _on_background_music_finished():
+	background_music.play()

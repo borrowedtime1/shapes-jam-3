@@ -195,9 +195,10 @@ offset_bottom = 100.0
 unique_name_in_owner = true
 stream = ExtResource("3_f35ah")
 
-[node name="Background Music" type="AudioStreamPlayer" parent="."]
+[node name="background_music" type="AudioStreamPlayer" parent="."]
 process_mode = 1
 stream = ExtResource("4_ra3ot")
 autoplay = true
 
 [connection signal="pressed" from="GrayScreen/button_exit" to="." method="_on_button_exit_pressed"]
+[connection signal="finished" from="background_music" to="." method="_on_background_music_finished"]
