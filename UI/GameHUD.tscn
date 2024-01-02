@@ -67,11 +67,13 @@ text = "Level
 metadata/_edit_use_anchors_ = true
 
 [node name="DiffLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.021875
 offset_left = 318.0
 offset_top = 53.0
 offset_right = 443.0
 offset_bottom = 76.0
-text = "Next Difficulty
+text = "Difficulty
 "
 metadata/_edit_use_anchors_ = true
 
@@ -90,6 +92,19 @@ offset_left = 433.0
 offset_top = 53.0
 offset_right = 473.0
 offset_bottom = 76.0
+text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="CountNumber" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_right = 0.00729167
+anchor_bottom = 0.025
+offset_left = 285.0
+offset_top = 19.0
+offset_right = 325.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 36
 text = "30"
 metadata/_edit_use_anchors_ = true
 
@@ -169,6 +184,30 @@ offset_top = 103.0
 offset_right = 437.0
 offset_bottom = 180.0
 theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinText" type="Label" parent="GrayScreen"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 338.0
+offset_top = 254.0
+offset_right = 822.0
+offset_bottom = 363.0
+theme_override_font_sizes/font_size = 64
+text = "You Win!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubText" type="Label" parent="GrayScreen/WinText"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 103.0
+offset_right = 437.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 36
+text = "You killed the ghost!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

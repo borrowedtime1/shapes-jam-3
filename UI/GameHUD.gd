@@ -15,8 +15,11 @@ func update_xp(xp):
 func update_level(level):
 	%LevelNumber.set_text(str(level))
 
-func update_diff(seconds):
-	%DiffNumber.set_text(str(round(seconds)))
+func update_diff(diff):
+	%DiffNumber.set_text(str(diff))
+	
+func update_timer(seconds):
+	%CountNumber.set_text(str(round(seconds)))
 
 func start_state():
 	%GrayScreen.visible = true
@@ -43,7 +46,10 @@ func gameover_state():
 	%GameOverText.visible = true
 	%GameOverSound.play()
 	
-	
+func win():
+	%GrayScreen.visible = true
+	%WinText.visible = true
+	get_tree().paused = true
 
 func levelup():
 	sndLevelUp.play()
