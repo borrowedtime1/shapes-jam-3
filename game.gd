@@ -3,9 +3,11 @@ extends Node2D
 var spawn_timer_delay = 4
 var spawn_count = 1
 var difficulty_increases = 0
+var hud
 
 func _ready():
 	%SpawnTimer.set_wait_time(spawn_timer_delay)
+	hud = get_node("/root/Game/GameHUD")
 
 func spawn_mob(count):
 	for i in count:
@@ -38,3 +40,7 @@ func _on_difficulty_timer_timeout():
 		%SpawnTimer.set_wait_time(spawn_timer_delay)
 
 
+
+
+func _on_hud_update_timer_timeout():
+	hud.update_diff(%DifficultyTimer.time_left)

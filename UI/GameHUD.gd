@@ -15,6 +15,9 @@ func update_xp(xp):
 func update_level(level):
 	%LevelNumber.set_text(str(level))
 
+func update_diff(seconds):
+	%DiffNumber.set_text(str(round(seconds)))
+
 func start_state():
 	%GrayScreen.visible = true
 	%StartText.visible = true

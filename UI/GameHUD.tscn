@@ -58,21 +58,39 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_753um")
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelLabel" type="Label" parent="."]
-offset_left = 364.0
-offset_top = 21.0
-offset_right = 405.0
-offset_bottom = 44.0
+offset_left = 387.0
+offset_top = 16.0
+offset_right = 428.0
+offset_bottom = 39.0
 text = "Level
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="DiffLabel" type="Label" parent="."]
+offset_left = 318.0
+offset_top = 53.0
+offset_right = 443.0
+offset_bottom = 76.0
+text = "Next Difficulty
 "
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelNumber" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 408.0
-offset_top = 21.0
-offset_right = 448.0
-offset_bottom = 44.0
+offset_left = 431.0
+offset_top = 16.0
+offset_right = 471.0
+offset_bottom = 39.0
 text = "1"
+metadata/_edit_use_anchors_ = true
+
+[node name="DiffNumber" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 433.0
+offset_top = 53.0
+offset_right = 473.0
+offset_bottom = 76.0
+text = "30"
 metadata/_edit_use_anchors_ = true
 
 [node name="GrayScreen" type="ColorRect" parent="."]

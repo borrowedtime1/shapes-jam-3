@@ -41,8 +41,13 @@ wait_time = 4.0
 autostart = true
 
 [node name="DifficultyTimer" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 30.0
+autostart = true
+
+[node name="HUDUpdateTimer" type="Timer" parent="."]
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="DifficultyTimer" to="." method="_on_difficulty_timer_timeout"]
+[connection signal="timeout" from="HUDUpdateTimer" to="." method="_on_hud_update_timer_timeout"]
