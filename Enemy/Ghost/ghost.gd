@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
-signal boss_death
+var health = 300
 
 @onready var player = get_node("/root/Game/Player")
 @onready var hud = get_node("/root/Game/GameHUD")
 
+func _ready():
+	%SpawnSound.play()
 #Bat Health
-var health = 300
+
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)

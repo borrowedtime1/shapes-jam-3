@@ -14,6 +14,7 @@ func _ready():
 func spawn_mob(count):
 	if difficulty_increases == BOSS_LV and boss_spawned == false:
 		var boss = preload("res://Enemy/Ghost/ghost.tscn").instantiate()
+		hud.stop_music()
 		add_child(boss)
 		boss_spawned = true
 	if difficulty_increases < BOSS_LV:

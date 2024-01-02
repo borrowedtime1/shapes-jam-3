@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0j0271v4xfx0"]
+[gd_scene load_steps=5 format=3 uid="uid://d0j0271v4xfx0"]
 
 [ext_resource type="Script" path="res://Enemy/Ghost/ghost.gd" id="1_ifcq1"]
 [ext_resource type="Texture2D" uid="uid://d2u44v85cmddm" path="res://Enemy/Ghost/ghost.png" id="1_ov8wv"]
+[ext_resource type="AudioStream" uid="uid://dkmscb67eu1ns" path="res://Enemy/Ghost/mixkit-monster-wraith-passing-by-1979.wav" id="3_jcrrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7dxx"]
 size = Vector2(126, 293)
@@ -18,3 +19,7 @@ texture = ExtResource("1_ov8wv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16.5)
 shape = SubResource("RectangleShape2D_d7dxx")
+
+[node name="SpawnSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_jcrrs")

@@ -51,6 +51,9 @@ func win():
 	%WinText.visible = true
 	get_tree().paused = true
 
+func stop_music():
+	%BackgroundMusic.stop()
+
 func levelup():
 	sndLevelUp.play()
 	#var tween = levelPanel.create_tween()
